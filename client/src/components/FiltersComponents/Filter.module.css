@@ -1,0 +1,48 @@
+.container{
+
+}
+
+.container div {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+.container div h3{
+    transition: 0.5s;
+    text-transform: uppercase;
+    display: flex;
+    cursor: default;
+    color: #fcda05;
+    font-size: 20px;
+}
+.container div h3:hover{
+    transition: 0.5s;
+    text-shadow: 2px 2px 5px #f6e367;
+}
+.options {
+    margin: auto;
+    margin-top: 10%;
+}
+
+.container div button {
+    transition: 0.5s;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 4px;
+    box-shadow: 0px 8px 10px 6px #393e46;
+    background-color: #fcda05;
+    width: 200px;
+    height: 25px;
+}
+.container div button:hover{
+    cursor:default;
+    transition: 0.5s;
+    width: 225px;
+    background-color: #fffbe0;
+    box-shadow: 0px 8px 10px 6px rgba(57, 62, 70, 0.483);
+}
+
+.styleDiets{
+    text-transform: capitalize;
+}

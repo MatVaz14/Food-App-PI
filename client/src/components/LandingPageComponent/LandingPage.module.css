@@ -1,0 +1,58 @@
+.container{
+    min-height: 100vh;
+    position: relative;
+}
+
+.containerIntroduction {
+    padding-top: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+.containerIntroduction h1 {
+    cursor: default;
+    color: #fcda05;
+    font-size: 50px;
+}
+.buttonStyle {
+    transition: 0.5s;
+    font-size: 18px;
+    border: #fffbe0;
+    border-radius: 10px;
+    background-color: #fcda05;
+    width: 150px;
+    height: 30px;
+}
+.buttonStyle:hover {
+    transition: 0.5;
+    width: 200px;
+    height: 35px;
+}
+.line {
+    width: 50%;
+    color: #fcda05;
+}
+video {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capa {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1c1d;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+}

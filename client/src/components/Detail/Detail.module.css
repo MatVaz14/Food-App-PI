@@ -1,0 +1,121 @@
+.containerDetail {
+    cursor: default;
+    display: flex;
+    color: #fcda05;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 50px;
+}
+.containerDetail h1 {
+    text-align: center;
+}
+.containerDetail h1:hover{
+    transition: 0.5s;
+    text-shadow: 2px 2px 5px #f6e367e8;
+}
+.containerDetail h2 {
+    transition: 0.5s;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+.containerDetail h2:hover{
+    transition: 0.5s;
+    text-shadow: 2px 2px 5px #f6e367dc;
+}
+.containerDetail p {
+    font-size: 18px;
+}
+.containerDetail hr{
+    width: 85%;
+    color: #fffbe0;
+}
+.containerImage{
+    margin-top: 10%;
+    width: 50vh;
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+}
+.containerImage img {
+    transition: 0.5s;
+    width: 80%;
+    height: 50%;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.containerImage img:hover {
+    transition: 0.5s;
+    width: 100%;
+    height: 70%;
+}
+.containerData{
+    width: 60%;
+    height: max-content;
+    border: 8px solid #fffbe0;
+    border-radius: 20px;
+}
+.containerData li {
+    list-style-type: none;
+}
+.containerDataLine {
+    border: 4px solid #fcda05;
+
+    background-color: #222831;
+    padding: 20px;
+    border-radius: 10px;
+    height: max-content;
+}
+
+/*==================================================*/
+
+.containerLiDiet {
+    transition: 0.5s;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 2px solid #393e46;
+    border-radius: 15px;
+    padding: 20px;
+}
+.containerLiDiet:hover{
+    transition: 0.5s;
+    box-shadow: 10px 10px 5px 0px #4e535c5e;
+    margin-bottom: 20px;
+}
+.containerLiDiet li {
+    text-transform: capitalize;
+    font-size: 18px;
+}
+.containerStepsLi {
+    transition: 0.5s;
+    border: 2px solid #393e46;
+    border-radius: 15px;
+    padding: 20px;
+    width: 80%;
+    padding-bottom: 30px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.containerStepsLi:hover{
+    transition: 0.5s;
+    box-shadow: 10px 10px 5px 0px #4e535c5e;
+    margin-bottom: 20px;
+}
+.containerSummaryText {
+    transition: 0.5s;
+    border: 2px solid #393e46;
+    border-radius: 15px;
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+}
+.containerSummaryText:hover{
+    transition: 0.5s;
+    box-shadow: 10px 10px 5px 0px #4e535c5e;
+    margin-bottom: 20px;
+}

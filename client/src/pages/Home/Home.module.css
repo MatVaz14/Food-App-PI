@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    padding: 10px;
+    position: relative;
+    z-index: 2;
+}
+.containerFilter{
+    border: 6px solid #fffbe0;
+    border-radius: 15px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+.containerBorder{
+    border:2px solid #fcda05;
+    border-radius: 10px;
+    background-color: #2228319f;
+    width: 100%;
+}
+.containerHome {
+    width: 80%;
+}

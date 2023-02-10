@@ -1,3 +1,5 @@
+// require("dotenv").config();
+// const { API_KEY } = process.env;
 const { Recipe, Diet } = require("../db");
 const axios = require("axios");
 const apiKey = "a5737bc0f7524c7584998f5c9eb47c40";

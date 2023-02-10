@@ -18,6 +18,7 @@ module.exports = (sequelize) => {
       summary: {
         type: DataTypes.STRING,
         allowNull: false,
+        defaultValue: "-",
       },
       healthScore: {
         type: DataTypes.INTEGER,

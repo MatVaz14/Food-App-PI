@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   filterByAlphabetical,
   filterByDiets,
@@ -37,6 +38,7 @@ const FilterComponents = ({ diets }) => {
           <h3>Recipes</h3>
           <button onClick={() => reset()}>All Recipes</button>
         </div>
+        <hr />
         <div>
           <h3>Order Health Score</h3>
           <button
@@ -52,6 +54,7 @@ const FilterComponents = ({ diets }) => {
             Falling
           </button>
         </div>
+        <hr />
         <div>
           <h3>Order Alphabetic</h3>
           <button
@@ -67,6 +70,7 @@ const FilterComponents = ({ diets }) => {
             Z - A
           </button>
         </div>
+        <hr />
         <div>
           <h3>Diets</h3>
           {diets.map((diet) => (
@@ -78,6 +82,13 @@ const FilterComponents = ({ diets }) => {
               {diet.name}
             </button>
           ))}
+        </div>
+        <hr />
+        <div>
+          <h3>Recipes Created</h3>
+          <Link to="/recipesCreated" className={style.linkStyle}>
+            <button className={style.styleDiets}>Go!</button>
+          </Link>
         </div>
       </div>
     </div>

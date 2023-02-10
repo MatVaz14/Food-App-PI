@@ -19,7 +19,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         recipesOrigin: action.payload,
-        recipes: [...state.recipesOrigin],
+        recipes: [...action.payload],
       };
     case GET_DIETS:
       return {
@@ -52,7 +52,7 @@ const rootReducer = (state = initialState, action) => {
     case FILTER_ALPHABETICAL:
       const orderFilterAlphabetical = [...state.recipesOrigin];
       let orderAlphanetical = [];
-      if (action.payload == "az") {
+      if (action.payload === "az") {
         orderAlphanetical = orderFilterAlphabetical.sort(function (a, b) {
           if (a.name > b.name) {
             return 1;

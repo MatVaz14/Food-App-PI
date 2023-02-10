@@ -37,7 +37,7 @@
     width: 50%;
     color: #fcda05;
 }
-video {
+.video {
     position: absolute;
     top:0;
     left: 0;
@@ -56,3 +56,4 @@ video {
     opacity: 0.5;
     mix-blend-mode: overlay;
 }
+

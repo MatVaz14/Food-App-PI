@@ -1,7 +1,13 @@
 import React from "react";
 import style from "./Paginado.module.css";
 //Le pasamos como props            recetasPorPagina, recetas, la funcion paginado
-export default function Paginado({ recipesPerPage, recipes, paginado }) {
+export default function Paginado({
+  recipesPerPage,
+  recipes,
+  paginado,
+  prevPage,
+  nextPage,
+}) {
   const pageNumbers = [];
   //Devolvemos el entero mayor o igual mas proximo al numero que nos de
   //Queremos iterar hasta que i sea menor o igual que la longitud de las recetas dividido por las recetas por pagina
@@ -14,6 +20,9 @@ export default function Paginado({ recipesPerPage, recipes, paginado }) {
   return (
     <div className={style.container}>
       <div>
+        <button className={style.stylePrevNext} onClick={() => prevPage()}>
+          ◀
+        </button>
         {pageNumbers?.map((number) => (
           <button
             className={style.buttonStyle}
@@ -22,6 +31,12 @@ export default function Paginado({ recipesPerPage, recipes, paginado }) {
             {number}
           </button>
         ))}
+        <button
+          className={style.stylePrevNext}
+          onClick={() => nextPage(pageNumbers.length - 1)}
+        >
+          ▶
+        </button>
       </div>
     </div>
   );

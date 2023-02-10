@@ -1,8 +1,8 @@
-import React, { useEffect, Suspense, lazy } from "react";
+import React, { Suspense, lazy } from "react";
 // import HomeComponent from "../../components/HomeComponent/HomeComponent";
 // import FilterComponents from "../../components/FiltersComponents/FilterComponents";
-import { useDispatch, useSelector } from "react-redux";
-import { getRecipes } from "../../Redux/actions";
+import { useSelector } from "react-redux";
+// import { getRecipes } from "../../Redux/actions";
 import style from "./Home.module.css";
 import Loading from "../../components/Loading/Loading";
 
@@ -15,11 +15,12 @@ const FilterComponents = lazy(() =>
 );
 const Home = ({ DIETS }) => {
   const recipes = useSelector((state) => state.recipesOrigin); // Nos 'suscribimos' al estado global, traemos las recetas
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getRecipes()); // Despachamos la action para traer las recetas
-  }, []);
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(getRecipes()); // Despachamos la action para traer las recetas
+  // }, []);
 
   return (
     <div>

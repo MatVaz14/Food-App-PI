@@ -4,12 +4,15 @@
     height: 80px;
 }
 .containerButtons {
-    flex-wrap: nowrap;
-    justify-content: space-between;
     display: flex;
+        flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
     height: 100%;
-    border-bottom-style:ridge;
     border-bottom: 2px solid #fcda05;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
 }
 .styleLinks {
     transition: 0.5s;
@@ -18,10 +21,20 @@
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
+    padding: 5%;
+    box-sizing: border-box;
 }
 
 .styleLinks:hover {
     transition: 0.5s;
     text-shadow: 2px 2px 5px #f6e367;
+}
+
+.containerLinks {
+    width: 50%;
+
+}
+
+.containerSearchBar {
 }

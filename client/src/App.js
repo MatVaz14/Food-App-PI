@@ -1,23 +1,31 @@
-import { useEffect, Suspense, lazy } from "react";
+import { useEffect, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, useLocation } from "react-router-dom";
-import "./App.css";
-// import Detail from "./components/Detail/Detail";
+
 //Pages / Components
-import Loading from "./components/Loading/Loading";
-import { NavBar, Home, FormCreateRecipe } from "./pages";
-import { getDiets } from "./Redux/actions";
-const LandingPage = lazy(() =>
-  import("./components/LandingPageComponent/LandingPage")
-);
-const Detail = lazy(() => import("./components/Detail/Detail"));
+import {
+  NavBar,
+  Home,
+  Detail,
+  LandingPage,
+  FormCreateRecipe,
+  RecipesCreated,
+  Loading,
+} from "./pages";
+import { getDiets, getRecipes } from "./Redux/actions";
 
 function App() {
   const location = useLocation();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getRecipes());
+  }, []);
+
   useEffect(() => {
     dispatch(getDiets());
   }, [dispatch]);
+
   const DIETS = useSelector((state) => state.diets);
 
   return (
@@ -33,8 +41,24 @@ function App() {
             </Suspense>
           )}
         />
-        <Route exact path="/home" render={() => <Home DIETS={DIETS} />} />
-        <Route exact path="/createRecipe" component={FormCreateRecipe} />
+        <Route
+          exact
+          path="/home"
+          render={() => (
+            <Suspense fallback={<Loading />}>
+              <Home DIETS={DIETS} />
+            </Suspense>
+          )}
+        />
+        <Route
+          exact
+          path="/createRecipe"
+          render={() => (
+            <Suspense fallback={<Loading />}>
+              <FormCreateRecipe />
+            </Suspense>
+          )}
+        />
         <Route
           exact
           path="/detail/:id"
@@ -44,6 +68,7 @@ function App() {
             </Suspense>
           )}
         />
+        <Route exact path="/recipesCreated" component={RecipesCreated} />
       </>
     </div>
   );

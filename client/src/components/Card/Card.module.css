@@ -2,10 +2,20 @@
     border: 6px solid #222831;
     border-radius: 10px;
     background-color: #393e46;
+    width: 30%;
+    margin: 10px;
+    height: 480px;
+}
+/*
+.container {
+    border: 6px solid #222831;
+    border-radius: 10px;
+    background-color: #393e46;
     width: 320px;
     margin: 10px;
     height: 480px;
 }
+*/
 .subContainer{
     border: 1px solid #fcda05;
     display: flex;
@@ -35,7 +45,8 @@
     text-align: center;
     text-decoration: none;
     color: #fcda05;
-    font-size: 24px;
+    font-size: 20px;
+    text-transform: capitalize;
 }
 .containerName h1:hover {
     transition: 0.5s;
@@ -76,11 +87,12 @@
     transition: 0.2s;
     cursor: default;
     color: #fcda05;
+    font-size: 14px;
     text-transform: uppercase;
     list-style-type: none;
 }
 .styleList:hover{
     transition: 0.2s;
     cursor: default;
-    font-size: 18px;
+    font-size: 16px;
 }

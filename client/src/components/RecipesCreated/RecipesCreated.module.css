@@ -1,0 +1,13 @@
+.containerCards {
+    margin: auto;
+    width: 90%;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.warningRecipe {
+    font-size: 30px;
+    color: gold;
+}

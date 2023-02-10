@@ -1,15 +1,16 @@
 
 .container {
     margin: auto;
+    width: 100%;
 }
 .styleInput {
     height: 32px;
-    width: 300px;
+    width: 80%;
     color: #393e46;
     padding-left: 12px;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     border-top: 1px solid #fcda05;
     border-left: 1px solid #fcda05;;
     -webkit-border-radius: 5px;
@@ -17,20 +18,23 @@
     border-radius: 15px 0px 0px 0;
     background-color: #fff;
     overflow: hidden;
+    box-sizing: border-box;
 }
 .styleInput input[type="text"] {
     width: 90%;
     padding: 8px 0 12px 1em;
     color: #333;
     outline: none;
+    box-sizing: border-box;
     }
 .styleButton {
     transition: 0.5s;
     top: 0;
     right: 0;
-    height: 35px;
-    width: 80px;
-    font-size: 16px;
+    height: 32px;
+    width: 20%;
+    box-sizing: border-box;
+    font-size: 12px;
     color: #222831;
     text-align: center;
     line-height: 4px;

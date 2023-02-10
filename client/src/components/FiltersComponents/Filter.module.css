@@ -5,7 +5,7 @@
 .container div {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 90%;
 }
 .container div h3{
     transition: 0.5s;
@@ -13,7 +13,7 @@
     display: flex;
     cursor: default;
     color: #fcda05;
-    font-size: 20px;
+    font-size: 18px;
 }
 .container div h3:hover{
     transition: 0.5s;
@@ -26,23 +26,36 @@
 
 .container div button {
     transition: 0.5s;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     border-radius: 4px;
     margin: 4px;
     box-shadow: 0px 8px 10px 6px #393e46;
     background-color: #fcda05;
-    width: 200px;
+    width: 75%;
     height: 25px;
 }
 .container div button:hover{
     cursor:default;
     transition: 0.5s;
-    width: 225px;
+    font-size: 13px;
+    width: 85%;
     background-color: #fffbe0;
     box-shadow: 0px 8px 10px 6px rgba(57, 62, 70, 0.483);
 }
 
 .styleDiets{
     text-transform: capitalize;
+}
+
+.container hr {
+    width: 85%;
+}
+
+.container Link {
+    cursor: default;
+}
+
+.linkStyle{
+    cursor: default;
 }

@@ -15,7 +15,7 @@ const Card = ({ id, name, diets, image }) => {
           <img src={image} alt="" />
         </div>
         <div className={style.containerDiets}>
-          {diets.map((diet) => (
+          {diets?.map((diet) => (
             <li className={style.styleList}>{`💫 ${diet}`}</li>
           ))}
         </div>

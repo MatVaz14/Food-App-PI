@@ -18,16 +18,37 @@ const HomeComponent = ({ recipes }) => {
     setCurrentPage(pageNumber);
   };
 
+  const prevPage = () => {
+    if (currentPage > 1 && currentPage <= indexFirstRecipe) {
+      setCurrentPage(currentPage - 1);
+    } else {
+      return;
+    }
+  };
+  console.log(currentPage);
+  const nextPage = (ultimaPagina) => {
+    if (currentPage >= 1 && currentPage <= ultimaPagina) {
+      setCurrentPage(currentPage + 1);
+    } else {
+      return;
+    }
+  };
+
   return (
     <div className={style.container}>
-      <div>
-        <Paginado
-          recipesPerPage={recipesPerPage}
-          recipes={recipes}
-          paginado={paginado}
-        />
-      </div>
-
+      {currentRecipes.length ? (
+        <div>
+          <Paginado
+            recipesPerPage={recipesPerPage}
+            recipes={recipes}
+            paginado={paginado}
+            nextPage={nextPage}
+            prevPage={prevPage}
+          />
+          <span className={style.styleSpan}>Page {currentPage}</span>
+        </div>
+      ) : null}
+      {!currentRecipes.length && <h1>No recipes found with that name ☹</h1>}
       <div className={style.containerCards}>
         {currentRecipes.map((recipe) => (
           <Card
@@ -39,6 +60,18 @@ const HomeComponent = ({ recipes }) => {
           />
         ))}
       </div>
+
+      {currentRecipes.length ? (
+        <div>
+          <Paginado
+            recipesPerPage={recipesPerPage}
+            recipes={recipes}
+            paginado={paginado}
+            nextPage={nextPage}
+            prevPage={prevPage}
+          />
+        </div>
+      ) : null}
     </div>
   );
 };

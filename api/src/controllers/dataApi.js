@@ -1,6 +1,6 @@
 const { Recipe, Diet } = require("../db");
 const axios = require("axios");
-const apiKey = "68082b42f85b41aaba7440e6c6be40ad";
+const apiKey = "a5737bc0f7524c7584998f5c9eb47c40";
 //Primero voy a hacer una funcion para poder extraer los datos que yo necesito
 //Luego en otra funcion acomodare los datos para su posterior uso...
 

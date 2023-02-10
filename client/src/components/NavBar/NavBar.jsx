@@ -7,13 +7,18 @@ const NavBar = () => {
   return (
     <div className={style.container}>
       <div className={style.containerButtons}>
-        <Link className={style.styleLinks} to="/home">
-          Food-App Home
-        </Link>
-        <SearchBar />
-        <Link className={style.styleLinks} to="/createRecipe">
-          Create Recipe
-        </Link>
+        <div className={style.containerLinks}>
+          <Link className={style.styleLinks} to="/home">
+            🏠 Food-App Home
+          </Link>
+
+          <Link className={style.styleLinks} to="/createRecipe">
+            🔪 Create Recipe
+          </Link>
+        </div>
+        <div className={style.containerSearchBar}>
+          <SearchBar />
+        </div>
       </div>
     </div>
   );

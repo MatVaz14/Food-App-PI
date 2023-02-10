@@ -4,9 +4,21 @@
 
 .containerCards {
     margin: auto;
-    width: 90%;
-    padding: 15px;
+    width: 100%;
+    padding: 2%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    box-sizing: border-box;
+}
+
+.styleSpan{
+    text-transform: uppercase;
+    cursor: default;
+    margin-left: 3%;
+    color: #222831;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px #f6e367;
+    -webkit-text-stroke: 1px #f6e367c4;
 }

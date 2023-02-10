@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import video from "../../video/landingPage.mp4";
+import imageGif from "../../gif/landingPage.gif";
 import style from "./LandingPage.module.css";
 const LandingPage = () => {
   return (
@@ -12,7 +12,7 @@ const LandingPage = () => {
           <button className={style.buttonStyle}>Start</button>
         </Link>
       </div>
-      <video src={video} autoPlay loop muted />
+      <img src={imageGif} className={style.video} alt="cheff.gif" />
       <div className={style.capa}></div>
     </div>
   );

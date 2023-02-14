@@ -5,8 +5,6 @@ const {
   getRecipesById,
   createRecipe,
   getDataBase,
-  updateRecipe,
-  deleteRecipe,
 } = require(".././controllers/recipesController");
 
 //Ruta en las que obtenemos la Informacion desde la API
@@ -15,11 +13,11 @@ const getRecipes = async (req, res) => {
   try {
     if (name) {
       const recipeName = await getRecipesByName(name);
-      res.status(200).send(recipeName);
+      res.status(200).json(recipeName);
     } else {
       // En vez de esto, deberia de indicar otro mensaje. o lo podria hacer sin una condicional
       const data = await getAllRecipes();
-      res.status(200).send(data);
+      res.status(200).json(data);
     }
   } catch (error) {
     res.status(400).json({ error: "Recipees Not Found" });
@@ -30,10 +28,10 @@ const getRecipesByID = async (req, res) => {
   try {
     if (id) {
       const data = await getRecipesById(id);
-      res.status(200).send(data);
+      res.status(200).json(data);
     }
   } catch (error) {
-    res.status(400).send(error);
+    res.status(400).json(error);
   }
 };
 
@@ -41,9 +39,9 @@ const getRecipesByID = async (req, res) => {
 const getDb = async (req, res) => {
   try {
     const data = await getDataBase();
-    res.status(200).send(data);
+    res.status(200).json(data);
   } catch (error) {
-    res.status(400).send(error);
+    res.status(400).json(error);
   }
 };
 

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getDiets } from "../../Redux/actions";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
 import style from "./FormCreateRecipe.module.css";
 import Validate from "./validate";
@@ -10,11 +9,6 @@ import { Link } from "react-router-dom";
 //COMPONENT
 const FormCreateRecipe = () => {
   const DIETS = useSelector((state) => state.diets);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getDiets());
-  }, [dispatch]);
 
   //ESTADOS LOCALES PARA EL FORM
   const [errores, setErrores] = useState({
@@ -30,6 +24,7 @@ const FormCreateRecipe = () => {
     image: "",
     steps: "",
   });
+  //Estos estados tambien constituyen el objeto completo en si, de la receta, se incluye en el post
   const [diets, setDiets] = useState([]);
   const [dietsName, setDietsName] = useState([]);
   const [range, setRange] = useState(0);
@@ -47,7 +42,7 @@ const FormCreateRecipe = () => {
       })
     );
   };
-
+  //Funcion para seleccionar dietas
   const handleCheck = (event) => {
     setDiets([...diets, ([event.target.id] = event.target.id)]);
 
@@ -67,7 +62,7 @@ const FormCreateRecipe = () => {
       setDietsName(exist);
     }
   };
-
+  //Funcion para manejar el estado local del Range, para el healthScore
   const handleRange = (event) => {
     setRange((event.target.name = event.target.value));
   };

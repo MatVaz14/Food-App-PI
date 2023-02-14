@@ -9,7 +9,6 @@ import {
 const initialState = {
   recipesOrigin: [], // ORIGINAL
   recipes: [], // LO USARE PARA LOS FILTROS
-  recipesCreated: [],
   diets: [],
 };
 
@@ -37,6 +36,7 @@ const rootReducer = (state = initialState, action) => {
       };
     case FILTER_HEALTHSCORE:
       const orderCopy = [...state.recipesOrigin];
+      // eslint-disable-next-line
       const order = orderCopy.sort((a, b) => {
         if (a.healthScore > b.healthScore) {
           return "upward" === action.payload ? 1 : -1;

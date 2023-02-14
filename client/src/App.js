@@ -1,5 +1,5 @@
 import { useEffect, Suspense } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Route } from "react-router-dom";
 
 //Pages / Components
@@ -19,17 +19,14 @@ function App() {
   useEffect(() => {
     dispatch(getRecipes());
     // eslint-disable-next-line
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getDiets());
   }, [dispatch]);
 
-  const DIETS = useSelector((state) => state.diets);
-
   return (
     <div className="App">
-      {/* {location.pathname !== "/" && <NavBar />} */}
       <>
         <Route
           exact
@@ -45,7 +42,7 @@ function App() {
           path="/home"
           render={() => (
             <Suspense fallback={<Loading />}>
-              <Home DIETS={DIETS} />
+              <Home />
             </Suspense>
           )}
         />

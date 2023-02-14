@@ -3,11 +3,13 @@ import Validate from "./validation";
 import style from "./ChangePerPage.module.css";
 
 const ChangePerPage = ({ setRecipesPerPage, setCurrentPage }) => {
-  //Intento de cambiar cantidad de paginas por pagina
+  //Estados para manejar errores e input
   const [input, setInput] = useState({ input: "" });
   const [error, setError] = useState({ input: "", enabled: false });
 
+  //Funciones
   const handleChange = (event) => {
+    //Cancela el evento si este es cancelable, sin detener el resto del funcionamiento del evento
     event.preventDefault();
     const { value } = event.target;
     setInput(value);
@@ -17,8 +19,7 @@ const ChangePerPage = ({ setRecipesPerPage, setCurrentPage }) => {
     setRecipesPerPage(input);
     setCurrentPage(1);
   };
-  console.log(input);
-  console.log(error.input);
+
   //=============================================//
   return (
     <div className={style.container}>

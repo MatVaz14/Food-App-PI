@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   filterByAlphabetical,
@@ -10,7 +10,8 @@ import {
 import style from "./Filter.module.css";
 
 //Inicio de Componente
-const FilterComponents = ({ diets }) => {
+const FilterComponents = () => {
+  const diets = useSelector((state) => state.diets);
   const dispatch = useDispatch();
 
   //Funciones

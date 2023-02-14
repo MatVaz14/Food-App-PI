@@ -2,7 +2,6 @@
 //Para poder desestructurar todo de un solo lugar
 import { lazy } from "react";
 
-import NavBar from "./NavBar/NavBar";
 import Loading from "../components/Loading/Loading";
 import RecipesCreated from "../components/RecipesCreated/RecipesCreated";
 
@@ -11,4 +10,4 @@ const Detail = lazy(() => import("../components/Detail/Detail"));
 const Form = lazy(() => import("./Form/Form"));
 const Home = lazy(() => import("../pages/Home/Home"));
 
-export { LandingPage, NavBar, Home, Form, Detail, Loading, RecipesCreated };
+export { LandingPage, Home, Form, Detail, Loading, RecipesCreated };

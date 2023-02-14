@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import Card from "../Card/Card";
 import ChangePerPage from "../ChangePerPage/ChangePerPage";
 import Paginado from "../Paginado/Paginado";
 import style from "./HomeComponent.module.css";
 
-const HomeComponent = ({ recipes }) => {
+const HomeComponent = () => {
+  const recipes = useSelector((state) => state.recipesOrigin);
   //Datos necesarios para armar el paginado
   //Primero armo un estado local, el cual lo inicire con 1
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,7 +30,7 @@ const HomeComponent = ({ recipes }) => {
       return;
     }
   };
-  console.log(currentPage);
+
   const nextPage = (ultimaPagina) => {
     if (currentPage >= 1 && currentPage <= ultimaPagina) {
       setCurrentPage(currentPage + 1);

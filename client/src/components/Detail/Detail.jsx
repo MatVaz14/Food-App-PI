@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import imgDefault from "./img/comida.jpg";
+import axios from "axios";
 import style from "./Detail.module.css";
 
 const Detail = () => {
@@ -8,9 +9,9 @@ const Detail = () => {
   const [detailRecipe, setDetailRecipe] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:3001/recipes/${id}`)
-      .then((response) => response.json())
-      .then((data) => setDetailRecipe(data[0]));
+    axios
+      .get(`/recipes/${id}`)
+      .then((response) => setDetailRecipe(response.data[0]));
   }, [id]);
 
   return (

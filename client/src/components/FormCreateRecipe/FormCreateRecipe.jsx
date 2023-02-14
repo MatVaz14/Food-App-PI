@@ -75,7 +75,7 @@ const FormCreateRecipe = () => {
       return diets.indexOf(item) === index;
     });
 
-    axios.post("http://localhost:3001/", {
+    axios.post("/", {
       name: myForm.name,
       summary: myForm.summary,
       healthScore: range,

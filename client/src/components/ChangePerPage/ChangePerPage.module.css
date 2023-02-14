@@ -1,0 +1,48 @@
+.container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+    margin: auto;
+    margin-left: 62.5%;
+    margin-top: 1%;
+}
+
+.containerInputs {
+    display: flex;
+}
+
+.styleInput {
+    padding-left: 10px;
+    width: 120px;
+    height: 20px;
+        font-weight: bold;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    border-left: 0.5px solid#fcda05;
+    border-top: 0.5px solid#fcda05;
+    border-bottom: 0.5px solid#fcda05;
+}
+
+.styleButton {
+    transition: 0.5s;
+    height: 23.5px;
+    border: none;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 0 10px 10px 0;
+    border-right: 0.5px solid#fcda05;
+    border-top: 0.5px solid#fcda05;
+    border-bottom: 0.5px solid#fcda05;
+}
+
+.styleButton:hover {
+    transition: 0.5s;
+    color: #383838;
+    background-color: #fcda05;
+}
+.error {
+    color: rgb(255, 53, 53);
+    font-size: 14px;
+    margin: auto;
+}

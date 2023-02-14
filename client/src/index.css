@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   /*/////////////////////////////////*/
-  background-image: url(./img/background1.jpg);
+  background-image: url(./img/imgDefault.jpg);
   /* Para dejar la imagen de fondo centrada, vertical y
   horizontalmente */
   background-position: center center;
@@ -19,7 +19,7 @@ body {
   background-size: cover;
   /* Se muestra un color de fondo mientras se está cargando la imagen
   de fondo o si hay problemas para cargarla */
-  background-color: #669996;
+  background-color: #222831;
 }
 
 code {

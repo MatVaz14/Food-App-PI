@@ -36,7 +36,14 @@ const FilterComponents = ({ diets }) => {
       <div className={style.options}>
         <div>
           <h3>Recipes</h3>
-          <button onClick={() => reset()}>All Recipes</button>
+          <button onClick={() => reset()}>All Recipes - Refresh</button>
+        </div>
+        <hr />
+        <div>
+          <h3>Recipes Created</h3>
+          <Link to="/recipesCreated" className={style.linkStyle}>
+            <button className={style.styleDiets}>Go!</button>
+          </Link>
         </div>
         <hr />
         <div>
@@ -82,13 +89,6 @@ const FilterComponents = ({ diets }) => {
               {diet.name}
             </button>
           ))}
-        </div>
-        <hr />
-        <div>
-          <h3>Recipes Created</h3>
-          <Link to="/recipesCreated" className={style.linkStyle}>
-            <button className={style.styleDiets}>Go!</button>
-          </Link>
         </div>
       </div>
     </div>

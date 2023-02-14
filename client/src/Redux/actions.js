@@ -9,11 +9,12 @@ import {
 
 //COMPONENT HOME - Traemos todos los datos del back
 export const getRecipes = () => {
+  //Retornamos una funcion que es la que se va a encargar de hacer la request
   return function (dispatch) {
     axios
       .get("http://localhost:3001/recipes")
       .then((response) => response.data)
-      .then((data) => dispatch({ type: GET_RECIPES, payload: data }));
+      .then((data) => dispatch({ type: GET_RECIPES, payload: data })); //hacemos el dispatch y la action va al reducer, el reducer la recibe y ya trabajamos con la info
   };
 };
 //SEARCHBAR

@@ -21,7 +21,7 @@ const getRecipes = async (req, res) => {
       res.status(200).send(data);
     }
   } catch (error) {
-    res.status(400).send(error);
+    res.status(400).json({ error: "Recipees Not Found" });
   }
 };
 const getRecipesByID = async (req, res) => {
@@ -61,8 +61,8 @@ const getRecipesByDiet = async (req, res) => {
 
 //----------------------------------- RUTA POST -----------------------------------\\
 const postRecipes = async (req, res) => {
+  const { name, summary, healthScore, image, steps, DietId } = req.body;
   try {
-    const { name, summary, healthScore, image, steps, DietId } = req.body;
     const newRecipe = await createRecipe(
       name,
       summary,
@@ -77,7 +77,7 @@ const postRecipes = async (req, res) => {
   }
 };
 
-//RECORDAR QUE LOS HANDLERS - NO - pueden interactuar con los modelos
+//RECORDAR QUE LOS HANDLERS - NO - deben interactuar con los modelos
 
 module.exports = {
   getRecipes,

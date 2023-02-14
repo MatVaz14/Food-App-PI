@@ -22,3 +22,18 @@
     text-shadow: 2px 2px 5px #f6e367;
     -webkit-text-stroke: 1px #f6e367c4;
 }
+
+.containerErrorFound{
+    border: 3px solid #4b4d4fb9;
+    background-color: #222831b9;
+    border-radius: 40px;
+    margin: auto;
+    width: 50%;
+    height: 40vh;
+}
+.errorFound {
+    font-size: 42px;
+    color: #fcda05;
+    text-align: center;
+    margin-top: 17%;
+}

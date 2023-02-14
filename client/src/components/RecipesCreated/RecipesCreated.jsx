@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Card from "../Card/Card";
 import style from "./RecipesCreated.module.css";
 
@@ -9,12 +10,28 @@ const RecipesCreated = () => {
     axios
       .get("http://localhost:3001/recipesDb")
       .then((data) => setRecipesCreated(...recipesCreated, data.data));
+    // eslint-disable-next-line
   }, []);
 
   return (
     <div className={style.containerCards}>
+      <div className={style.back}>
+        <Link to="/home">
+          <button>Back</button>
+        </Link>
+      </div>
       {!recipesCreated.length && (
-        <h1 className={style.warningRecipe}>Aun no has creado una receta </h1>
+        <div className={style.containerWanringRecipe}>
+          <div className={style.warningGo}>
+            <h1 className={style.warningRecipe}>
+              Aun no has creado una receta{" "}
+            </h1>
+            <span>Crea Una! :)</span>
+            <Link to="/createRecipe">
+              <button>Go!</button>
+            </Link>
+          </div>
+        </div>
       )}
       {recipesCreated?.map((recipe) => (
         <Card

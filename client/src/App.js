@@ -1,25 +1,24 @@
 import { useEffect, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Route, useLocation } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 //Pages / Components
 import {
-  NavBar,
   Home,
   Detail,
   LandingPage,
-  FormCreateRecipe,
+  Form,
   RecipesCreated,
   Loading,
 } from "./pages";
 import { getDiets, getRecipes } from "./Redux/actions";
 
 function App() {
-  const location = useLocation();
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getRecipes());
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
@@ -30,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      {location.pathname !== "/" && <NavBar />}
+      {/* {location.pathname !== "/" && <NavBar />} */}
       <>
         <Route
           exact
@@ -55,7 +54,7 @@ function App() {
           path="/createRecipe"
           render={() => (
             <Suspense fallback={<Loading />}>
-              <FormCreateRecipe />
+              <Form />
             </Suspense>
           )}
         />

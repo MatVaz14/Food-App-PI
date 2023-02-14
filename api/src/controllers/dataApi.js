@@ -2,7 +2,7 @@
 // const { API_KEY } = process.env;
 const { Recipe, Diet } = require("../db");
 const axios = require("axios");
-const apiKey = "a5737bc0f7524c7584998f5c9eb47c40";
+const apiKey = "21a6cc0d8dae4222957e2b16355a8029";
 //Primero voy a hacer una funcion para poder extraer los datos que yo necesito
 //Luego en otra funcion acomodare los datos para su posterior uso...
 
@@ -33,7 +33,7 @@ const apiInfo = async () => {
 //Esta sera la funcion que utilizare para acomodar los datos finalmente y utilizarlos
 const apiData = async () => {
   const data = await apiInfo();
-  const Data = data.map((item) => {
+  const definiveData = data.map((item) => {
     return {
       id: item.id,
       name: item.name,
@@ -45,7 +45,7 @@ const apiData = async () => {
       create: false,
     };
   });
-  return Data;
+  return definiveData;
 };
 
 // Obtenemos los datos de la base de datos

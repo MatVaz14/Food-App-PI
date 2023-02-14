@@ -1,10 +1,38 @@
+.containerGeneral {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    align-items: center;
+}
+.back {
+    width: 100%;
+}
+.back button {
+    margin-left: 5%;
+    margin-top: 5px;
+    height: 50px;
+    width: 80px;
+    border: 2px solid #222831a1;
+    border-radius: 10px;
+    background-color: #fcda05;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    transition: 0.5s;
+}
+.back button:hover {
+    transition: 0.5s;
+    background-color: #ffeb6b;
+}
+
 .containerDetail {
     cursor: default;
     display: flex;
     color: #fcda05;
     width: 100%;
     justify-content: space-evenly;
-    padding: 50px;
+    padding-top: 2%;
 }
 .containerDetail h1 {
     text-align: center;

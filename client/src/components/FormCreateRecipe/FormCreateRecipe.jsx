@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDiets } from "../../Redux/actions";
 import axios from "axios";
-import comida from "./img/comida.jpg";
 import style from "./FormCreateRecipe.module.css";
 import Validate from "./validate";
+import FormShowType from "./FormShowType";
+import { Link } from "react-router-dom";
 
 //COMPONENT
 const FormCreateRecipe = () => {
@@ -52,17 +53,17 @@ const FormCreateRecipe = () => {
 
     if (event.target.checked) {
       let data = event.target.value;
-      let exist = dietsName.find((element) => element == data);
+      let exist = dietsName.find((element) => element === data);
       if (exist) return;
       setDietsName([...dietsName, ([event.target.name] = event.target.value)]);
     }
     if (!event.target.checked) {
       let dataId = event.target.id;
-      let deleteId = diets.filter((element) => element != dataId);
+      let deleteId = diets.filter((element) => element !== dataId);
       setDiets(deleteId);
 
       let data = event.target.value;
-      let exist = dietsName.filter((element) => element != data);
+      let exist = dietsName.filter((element) => element !== data);
       setDietsName(exist);
     }
   };
@@ -97,6 +98,7 @@ const FormCreateRecipe = () => {
       image: "",
       steps: "",
     });
+    setRange(0);
     setErrores({
       name: "",
       summary: "",
@@ -107,6 +109,11 @@ const FormCreateRecipe = () => {
 
   return (
     <div className={style.container}>
+      <div className={style.back}>
+        <Link to="/home">
+          <button>Go Home!</button>
+        </Link>
+      </div>
       <div className={style.containerForm}>
         <form onSubmit={(event) => handleSubmit(event)}>
           <div className={style.styleName}>
@@ -172,20 +179,26 @@ const FormCreateRecipe = () => {
 
           <div className={style.containerDiets}>
             <label className={style.styleLabel}>Select Diet</label>
-            <div>
-              {DIETS.map((diet) => (
-                <label className={style.styleTextDiet}>
-                  <input
-                    className={style.checkStyle}
-                    type="checkbox"
-                    id={`${diet.id}`}
-                    value={`${diet.name}`}
-                    onChange={(event) => handleCheck(event)}
-                  />
-                  {diet.name}
-                </label>
-              ))}
-            </div>
+            {DIETS.length ? (
+              <div>
+                {DIETS.map((diet) => (
+                  <label className={style.styleTextDiet}>
+                    <input
+                      className={style.checkStyle}
+                      type="checkbox"
+                      id={`${diet.id}`}
+                      value={`${diet.name}`}
+                      onChange={(event) => handleCheck(event)}
+                    />
+                    {diet.name}
+                  </label>
+                ))}
+              </div>
+            ) : (
+              <span className={style.avisos}>
+                404 - Diet not available at the moment :(
+              </span>
+            )}
           </div>
 
           <div className={style.containerButtonCreate}>
@@ -202,22 +215,12 @@ const FormCreateRecipe = () => {
       </div>
 
       {/* Otro div en el cual se mostrara algunos datos que estemos rellenando en el formulario por medio de los estados locales */}
-
-      <div className={style.containerShow}>
-        <div className={style.showText}>
-          <h1>{myForm.name}</h1>
-          <h3>{`Helath Score: ${range}`}</h3>
-          <img
-            src={myForm.image ? myForm.image : comida}
-            width="200px"
-            height="200px"
-            alt=""
-          />
-          <div className={style.showDiets}>
-            {dietsName ? dietsName.map((diet) => <li>{diet}</li>) : null}
-          </div>
-        </div>
-      </div>
+      <FormShowType
+        myForm={myForm}
+        dietsName={dietsName}
+        DIETS={DIETS}
+        range={range}
+      />
     </div>
   );
 };

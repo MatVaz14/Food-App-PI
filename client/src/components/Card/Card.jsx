@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import style from "./Card.module.css";
+import imageDefault from "./img/comida.jpg";
 
 const Card = ({ id, name, diets, image }) => {
   return (
@@ -12,7 +13,7 @@ const Card = ({ id, name, diets, image }) => {
           </Link>
         </div>
         <div className={style.containerImage}>
-          <img src={image} alt="" />
+          <img src={image ? image : imageDefault} alt="" />
         </div>
         <div className={style.containerDiets}>
           {diets?.map((diet) => (

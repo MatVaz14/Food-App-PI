@@ -1,13 +1,13 @@
-require("dotenv").config();
+require("dotenv").config(); // requerimos dontenv para que este modulo tenga el acceso a nuestras variables de entorno (.env)
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
-
+//Creamos la conexion con nuestra base de datos, conexion con la base de datos
 const sequelize = new Sequelize(
   `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/food`,
   {
-    logging: false, // set to console.log to see the raw SQL queries
+    logging: false, // set to console.log to see the raw SQL queries, nos sirve para que nos nos muestre toooda la info del sync en nuestra terminal
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
   }
 );

@@ -9,6 +9,13 @@ const {
 
 const recipesRouter = Router();
 
+const validate = (req, res, next) => {
+  const { name, summary, steps } = req.body;
+  if (!name || !summary || !steps)
+    return res.status(400).json({ error: "Missing Data" });
+  next();
+};
+
 //Rutas
 //API
 recipesRouter.get("/recipes", getRecipes);
@@ -16,7 +23,7 @@ recipesRouter.get("/recipes/:id", getRecipesByID);
 //DB
 recipesRouter.get("/recipesDb", getDb);
 //POST - crear recetas
-recipesRouter.post("/", postRecipes);
+recipesRouter.post("/", validate, postRecipes);
 
 //Filtros
 recipesRouter.get("/recipes/:diets", getRecipesByDiet);

@@ -1,6 +1,5 @@
 const { Diet } = require("../db");
 const { infoTotal } = require("../controllers/dataApi");
-const diets = require("../data/dataDiets");
 
 const DIETAS = async () => {
   try {
@@ -28,17 +27,3 @@ const loadDiets = async () => {
 };
 
 module.exports = { loadDiets, DIETAS };
-
-/*
-  const data = diets.map((diet) => {
-    return {
-      name: diet.name,
-    };
-  });
-  const infoDB = Diet.findAll();
-  if (!infoDB.length) {
-    await Diet.bulkCreate(data);
-    console.log("Db Diet Created");
-  }
-
-*/

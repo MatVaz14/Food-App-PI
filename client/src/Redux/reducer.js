@@ -20,7 +20,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         recipesOrigin: action.payload,
         recipes: [...action.payload],
-      };
+      }; //Retornamos el estado nuevo
     case GET_DIETS:
       return {
         ...state,

@@ -1,5 +1,4 @@
 const { informationDataBase, infoTotal } = require("./dataApi");
-const axios = require("axios");
 const { Recipe, Diet } = require(".././db");
 
 //Obtenemos todoas las recetas desde la api
@@ -14,7 +13,7 @@ const getRecipesByName = async (name) => {
   );
   return data;
 };
-// cambie  recipe.id == id por include
+
 const getRecipesById = async (id) => {
   const data = await infoTotal();
   const infoId = await data.filter((recipe) => recipe.id == id);
@@ -36,6 +35,7 @@ const getByDiets = async (dietaInclude) => {
   return recipes;
 };
 
+//Trabajamos con async porque vamos a trabajar con el modelo Recipe, y estos manejan promesas, retornan promesas
 // Funcion para poder crear nuevas recetas :D
 const createRecipe = async (
   name,
@@ -54,7 +54,7 @@ const createRecipe = async (
   });
   await newRecipe.addDiet(DietId);
   return newRecipe;
-}; // Recipe.create nos devuelve una promesa, por ese motivo le hacemos un await
+}; // Recipe.create nos devuelve una promesa
 
 module.exports = {
   getAllRecipes,

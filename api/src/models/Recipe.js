@@ -22,6 +22,7 @@ module.exports = (sequelize) => {
       },
       healthScore: {
         type: DataTypes.INTEGER,
+        defaultValue: 0,
       },
       image: {
         type: DataTypes.STRING,
@@ -39,12 +40,3 @@ module.exports = (sequelize) => {
     { timestamps: false }
   );
 };
-
-/*
-ID: *
-Nombre *
-Resumen del plato *
-Nivel de "comida saludable" (health score)
-Paso a paso
-
-*/

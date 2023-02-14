@@ -1,5 +1,5 @@
 const { informationDataBase, infoTotal } = require("./dataApi");
-const { Recipe, Diet } = require(".././db");
+const { Recipe } = require(".././db");
 
 //Obtenemos todoas las recetas desde la api
 const getAllRecipes = async () => {
@@ -24,15 +24,6 @@ const getRecipesById = async (id) => {
 const getDataBase = async () => {
   const api = await informationDataBase();
   return api;
-};
-
-// Filtros - NO ESTA FUNCIONANDO
-const getByDiets = async (dietaInclude) => {
-  const data = await infoTotal();
-  const recipes = await data.filter((recipe) =>
-    recipe.diets.includes(dietaInclude)
-  );
-  return recipes;
 };
 
 //Trabajamos con async porque vamos a trabajar con el modelo Recipe, y estos manejan promesas, retornan promesas
@@ -62,5 +53,4 @@ module.exports = {
   getRecipesByName,
   getRecipesById,
   createRecipe,
-  getByDiets,
 };

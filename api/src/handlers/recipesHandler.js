@@ -5,7 +5,8 @@ const {
   getRecipesById,
   createRecipe,
   getDataBase,
-  getByDiets,
+  updateRecipe,
+  deleteRecipe,
 } = require(".././controllers/recipesController");
 
 //Ruta en las que obtenemos la Informacion desde la API
@@ -46,19 +47,6 @@ const getDb = async (req, res) => {
   }
 };
 
-// HANDLERS PARA LOS FILTROS
-const getRecipesByDiet = async (req, res) => {
-  const { diets } = req.params;
-  try {
-    if (diets) {
-      const data = await getByDiets(diets);
-      res.status(200).send(data);
-    }
-  } catch (error) {
-    res.status(400).send(error);
-  }
-};
-
 //----------------------------------- RUTA POST -----------------------------------\\
 const postRecipes = async (req, res) => {
   const { name, summary, healthScore, image, steps, DietId } = req.body;
@@ -84,5 +72,4 @@ module.exports = {
   getRecipesByID,
   postRecipes,
   getDb,
-  getRecipesByDiet,
 };

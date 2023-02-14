@@ -4,7 +4,6 @@ const {
   getRecipesByID,
   postRecipes,
   getDb,
-  getRecipesByDiet,
 } = require("../handlers/recipesHandler");
 
 const recipesRouter = Router();
@@ -20,12 +19,8 @@ const validate = (req, res, next) => {
 //API
 recipesRouter.get("/recipes", getRecipes);
 recipesRouter.get("/recipes/:id", getRecipesByID);
-//DB
 recipesRouter.get("/recipesDb", getDb);
 //POST - crear recetas
 recipesRouter.post("/", validate, postRecipes);
-
-//Filtros
-recipesRouter.get("/recipes/:diets", getRecipesByDiet);
 
 module.exports = recipesRouter;

@@ -1,15 +1,15 @@
-// require("dotenv").config();
-// const { API_KEY } = process.env;
+require("dotenv").config();
+const { API_KEY } = process.env;
 const { Recipe, Diet } = require("../db");
 const axios = require("axios");
-const apiKey = "21a6cc0d8dae4222957e2b16355a8029";
+// const apiKey = "7d3e53c854d847369e49f6fe80ae8148";
 //Primero voy a hacer una funcion para poder extraer los datos que yo necesito
 //Luego en otra funcion acomodare los datos para su posterior uso...
 
 const apiInfo = async () => {
   const api = (
     await axios.get(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&addRecipeInformation=true&number=100`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`
     )
   ).data;
   const information = api.results.map((food) => {

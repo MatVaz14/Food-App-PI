@@ -1,7 +1,6 @@
 import { useEffect, Suspense } from "react";
 import { useDispatch } from "react-redux";
 import { Route } from "react-router-dom";
-
 //Pages / Components
 import {
   Home,
@@ -12,6 +11,9 @@ import {
   Loading,
 } from "./pages";
 import { getDiets, getRecipes } from "./Redux/actions";
+//Refactorizando para Deploy Front
+import axios from "axios";
+axios.defaults.baseURL = "http://localhost:3001/";
 
 function App() {
   const dispatch = useDispatch();

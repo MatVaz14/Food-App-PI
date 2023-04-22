@@ -2,10 +2,9 @@ require("dotenv").config();
 const { API_KEY } = process.env;
 const { Recipe, Diet } = require("../db");
 const axios = require("axios");
-// const apiKey = "7d3e53c854d847369e49f6fe80ae8148";
-//Primero voy a hacer una funcion para poder extraer los datos que yo necesito
-//Luego en otra funcion acomodare los datos para su posterior uso...
 
+//Funcion para poder extraer los datos que yo necesito
+//Luego en otra funcion acomodare los datos para su posterior uso...
 const apiInfo = async () => {
   const api = (
     await axios.get(
@@ -60,7 +59,7 @@ const getDataDb = async () => {
     },
   });
 };
-
+//Funcion para acomodar los datos igual que la de api
 const informationDataBase = async () => {
   const data = await getDataDb();
   const info = data.map((inf) => {

@@ -6,6 +6,7 @@ import style from "./RecipesCreated.module.css";
 
 const RecipesCreated = () => {
   const [recipesCreated, setRecipesCreated] = useState([]);
+
   useEffect(() => {
     axios
       .get("http://localhost:3001/recipesDb")
@@ -24,9 +25,9 @@ const RecipesCreated = () => {
         <div className={style.containerWanringRecipe}>
           <div className={style.warningGo}>
             <h1 className={style.warningRecipe}>
-              Aun no has creado una receta{" "}
+              You haven't created a recipe yet{" "}
             </h1>
-            <span>Crea Una! :)</span>
+            <span>Create One! :)</span>
             <Link to="/createRecipe">
               <button>Go!</button>
             </Link>

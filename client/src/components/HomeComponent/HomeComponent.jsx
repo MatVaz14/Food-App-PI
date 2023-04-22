@@ -54,7 +54,6 @@ const HomeComponent = () => {
             nextPage={nextPage}
             prevPage={prevPage}
           />
-          <span className={style.styleSpan}>Page {currentPage}</span>
         </div>
       ) : null}
 

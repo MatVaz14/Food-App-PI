@@ -20,6 +20,12 @@
         background-color: #ffeb6b;
 }
 
+.back button:active {
+    transition: 0s;
+background: rgb(52, 52, 52);
+color: white;
+}
+
 .container {
     width: 90%;
     margin: auto;
@@ -32,6 +38,8 @@
     border-radius: 10px;
     border: 6px solid #222831;
 }
+
+/*Estilos para el componente Show*/
 .containerShow h3{
     text-align: center;
 }
@@ -48,7 +56,10 @@
     border: 6px solid #fffbe0;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
-
+.containerImgShow{
+    display: flex;
+    justify-content: center;
+}
 .showText {
     transition: 0.5s;
     border: 4px solid #fffbe0;
@@ -72,10 +83,9 @@
     text-shadow: 2px 2px 5px #f6e3679a;
 }
 .showText img {
-    margin-left: 50px;
     transition: 0.5s;
     border-radius: 10px;
-    width: 300px;
+    width: 80%;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 .showText img:hover {
@@ -245,6 +255,13 @@
     transition: 0.5;
     width: 200px;
     height: 35px;
+}
+
+.buttonSubmit:active {
+    transition: 0s;
+background: rgb(52, 52, 52);
+color: white;
+border: 1px solid #fcda05;
 }
 
 /* POR SI HAY ERROR EN LA API O ALGO */

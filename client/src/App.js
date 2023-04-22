@@ -1,6 +1,7 @@
 import { useEffect, Suspense } from "react";
 import { useDispatch } from "react-redux";
 import { Route } from "react-router-dom";
+import "./App.css";
 //Pages / Components
 import {
   Home,
@@ -13,6 +14,8 @@ import {
 import { getDiets, getRecipes } from "./Redux/actions";
 //Refactorizando para Deploy Front
 import axios from "axios";
+
+// axios.defaults.baseURL = "http://localhost:3001/";
 axios.defaults.baseURL = "https://food-app-pi-production.up.railway.app/";
 
 function App() {

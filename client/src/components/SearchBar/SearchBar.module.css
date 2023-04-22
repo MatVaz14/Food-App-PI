@@ -50,3 +50,10 @@
     transition: 0.5s;
     background-color: #fcda05;
 }
+
+.styleButton:active {
+    transition: 0s;
+background: rgb(52, 52, 52);
+color: white;
+border: 1px solid #fcda05;
+}

@@ -11,7 +11,7 @@ export default function Validate(inputs) {
     errors.name = "Only letters and spaces...";
   } else if (inputs.name.length < 5) {
     errors.name = "Min 5 characters";
-  }
+  } 
 
   if (!inputs.summary) {
     errors.summary = "Summary is required";

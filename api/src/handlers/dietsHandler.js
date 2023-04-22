@@ -1,15 +1,12 @@
 const { Diet } = require("../db");
-const { loadDiets, DIETAS } = require("../controllers/dietsController");
 
 const getAllDiets = async (req, res) => {
   const data = await Diet.findAll();
-  res.status(200).send(data);
+  try {
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(400).json({ error: message.error });
+  }
 };
 
-// handler de prueba, solo uso de desarrollo
-const tenDieta = async (req, res) => {
-  const data = await DIETAS();
-  res.status(200).send(data);
-};
-
-module.exports = { getAllDiets, tenDieta };
+module.exports = { getAllDiets };

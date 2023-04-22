@@ -6,6 +6,7 @@ const getAllRecipes = async () => {
   const api = await infoTotal();
   return api;
 };
+
 const getRecipesByName = async (name) => {
   const apiInfo = await infoTotal();
   const data = await apiInfo.filter((i) =>

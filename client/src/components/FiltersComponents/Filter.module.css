@@ -1,10 +1,27 @@
 .container{
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
-
+.container select {
+    transition: 0.5s;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    margin: 4px;
+    box-shadow: 0px 8px 10px 6px #393e46;
+    background-color: #fcda05;
+    width: fit-content;
+    height: 25px;
+}
+.container select option {
+    font-weight: bold;
+}
 .container div {
     display: flex;
-    flex-direction: column;
     width: 90%;
 }
 .container div h3{
@@ -20,8 +37,10 @@
     text-shadow: 2px 2px 5px #f6e367;
 }
 .options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: auto;
-    margin-top: 10%;
 }
 
 .container div button {
@@ -32,16 +51,28 @@
     margin: 4px;
     box-shadow: 0px 8px 10px 6px #393e46;
     background-color: #fcda05;
-    width: 75%;
+    width: fit-content;
     height: 25px;
 }
 .container div button:hover{
+    cursor:default;
+    background-color: #fffbe0;
+    box-shadow: 0px 8px 10px 6px rgba(57, 62, 70, 0.483);
+}
+
+.container div button:focus {
     cursor:default;
     transition: 0.5s;
     font-size: 13px;
     width: 85%;
     background-color: #fffbe0;
     box-shadow: 0px 8px 10px 6px rgba(57, 62, 70, 0.483);
+}
+
+.container div button:active {
+    transition: 0s;
+    background: rgb(52, 52, 52);
+    color: white;
 }
 
 .styleDiets{

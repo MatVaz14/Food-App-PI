@@ -28,6 +28,13 @@
     background-color: #ffeb6b;
 }
 
+.back button:active {
+    transition: 0s;
+background: rgb(52, 52, 52);
+color: white;
+}
+
+
 
 .warningRecipe {
     font-size: 30px;
@@ -75,4 +82,10 @@
     height: 35px;
     width: 55px;
     background-color: #fae76b;
+}
+
+.warningGo button:active {
+    transition: 0s;
+background: rgb(52, 52, 52);
+color: white;
 }

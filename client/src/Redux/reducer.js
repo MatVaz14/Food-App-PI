@@ -20,11 +20,13 @@ const rootReducer = (state = initialState, action) => {
         recipesOrigin: action.payload,
         recipes: [...action.payload],
       }; //Retornamos el estado nuevo
+
     case GET_DIETS:
       return {
         ...state,
         diets: action.payload,
       };
+
     case FILTER_DIETS:
       const data = [...state.recipes];
       const dataFilter = data.filter((recipe) =>
@@ -34,6 +36,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         recipesOrigin: dataFilter,
       };
+
     case FILTER_HEALTHSCORE:
       const orderCopy = [...state.recipesOrigin];
       // eslint-disable-next-line
@@ -49,6 +52,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         recipesOrigin: order,
       };
+
     case FILTER_ALPHABETICAL:
       const orderFilterAlphabetical = [...state.recipesOrigin];
       let orderAlphanetical = [];
@@ -79,6 +83,7 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         recipesOrigin: orderAlphanetical,
       };
+
     default:
       return { ...state };
   }

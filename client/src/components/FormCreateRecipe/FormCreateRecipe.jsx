@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 //COMPONENT
 const FormCreateRecipe = () => {
   const DIETS = useSelector((state) => state.diets);
+  const recipeCreada = useSelector((state) => state.recipesOrigin);
 
   //ESTADOS LOCALES PARA EL FORM
   const [errores, setErrores] = useState({
@@ -31,6 +32,10 @@ const FormCreateRecipe = () => {
 
   //FUNCIONES PARA CAPTAR LOS CAMBIOS EN LOS INPUTS Y PASARLOS A LOS ESTADOS
   const handleInputChange = (event) => {
+    let exist = recipeCreada.map(
+      (recipe) => recipe.name.toLowerCase() === myForm.name.toLowerCase()
+    );
+
     setMyForm({
       ...myForm,
       [event.target.name]: event.target.value,
@@ -71,6 +76,7 @@ const FormCreateRecipe = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     //Hago un controller del estado diets para los valores que se encuentren repedios, solo quede un unico valor
+    //con filter voy a retornar un nuevo arreglo con los elementos que cumplan la condicion
     let controllerDiets = diets.filter((item, index) => {
       return diets.indexOf(item) === index;
     });

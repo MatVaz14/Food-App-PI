@@ -19,9 +19,7 @@
 }
 
 .buttonStyle:hover{
-    font-size: 17px;
-    width: 35px;
-    height: 32px;
+    transform: scale(1.1);
 }
 
 .buttonStyle:focus{
